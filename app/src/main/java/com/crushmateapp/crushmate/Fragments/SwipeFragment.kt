@@ -170,8 +170,10 @@ class SwipeFragment : Fragment() {
     }
 
     fun populateItems() {
-        noUsersLay.visibility = View.GONE
-        progressLay.visibility = View.VISIBLE
+        if (noUsersLay != null) {
+            noUsersLay.visibility = View.GONE
+            progressLay.visibility = View.VISIBLE
+
         val cardsQuery = userDatabase.orderByChild("gender").equalTo(preferredGender)
         cardsQuery.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
@@ -205,20 +207,26 @@ class SwipeFragment : Fragment() {
                     }
                 }
 
-                var temp= User("1000", "Mukesh Ambani", "50", "ambani.mukesh@gmail.com",
+                var temp = User(
+                    "1000", "Mukesh Ambani", "50", "ambani.mukesh@gmail.com",
                     "male",
                     "female",
-                    "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5c7d7829a7ea434b351ba0b6%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D206%26cropX2%3D2043%26cropY1%3D250%26cropY2%3D2089")
+                    "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5c7d7829a7ea434b351ba0b6%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D206%26cropX2%3D2043%26cropY1%3D250%26cropY2%3D2089"
+                )
 
-                var temp1= User("1001", "Gautam Adani", "58", "Gautam.Adani@gmail.com",
+                var temp1 = User(
+                    "1001", "Gautam Adani", "58", "Gautam.Adani@gmail.com",
                     "male",
                     "female",
-                    "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5e7689c3d8e1ae0007b722d6%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D32%26cropX2%3D1066%26cropY1%3D191%26cropY2%3D1226")
+                    "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5e7689c3d8e1ae0007b722d6%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D32%26cropX2%3D1066%26cropY1%3D191%26cropY2%3D1226"
+                )
 
-                var temp2= User("1002", "Hinduja brothers", "62", "Hinduja.brothers@gmail.com",
+                var temp2 = User(
+                    "1002", "Hinduja brothers", "62", "Hinduja.brothers@gmail.com",
                     "male",
                     "female",
-                    "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5c7269a031358e35dd2701d6%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D771%26cropX2%3D3428%26cropY1%3D11%26cropY2%3D2667")
+                    "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5c7269a031358e35dd2701d6%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D771%26cropX2%3D3428%26cropY1%3D11%26cropY2%3D2667"
+                )
 
 
 
@@ -235,6 +243,8 @@ class SwipeFragment : Fragment() {
                 }
             }
         })
+
+    }
     }
 
 }

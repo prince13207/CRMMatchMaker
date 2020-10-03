@@ -79,8 +79,8 @@ class UserDetailActivity : AppCompatActivity() {
     fun startCall(view: View){
         callRecord.startCallReceiver();
 
-        val intent = Intent(Intent.ACTION_CALL);
-        intent.data = Uri.parse("tel:8600505178")
+        val intent = Intent(Intent.ACTION_DIAL);
+        intent.data = Uri.parse("tel:198")
         startActivity(intent)
 
     }
