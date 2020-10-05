@@ -3,13 +3,16 @@ package com.crushmateapp.crushmate.activities
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
+import android.media.MediaRecorder
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.aykuttasil.callrecord.CallRecord
 import com.crushmateapp.crushmate.Fragments.MatchesFragment
 import com.crushmateapp.crushmate.Fragments.ProfileFragment
 import com.crushmateapp.crushmate.Fragments.SwipeFragment
@@ -49,6 +52,8 @@ class TinderActivity : AppCompatActivity(),CallbackInterace {
     private var matchesTab: TabLayout.Tab? = null
 
     private var resultImageUrl: Uri? = null
+
+    private lateinit var callRecord: CallRecord
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,15 +123,36 @@ class TinderActivity : AppCompatActivity(),CallbackInterace {
 
         profileTab?.select()  //bydefault
 
+
+
+        callRecord = CallRecord.Builder(this)
+            .setLogEnable(true)
+            .setRecordFileName("CallRecorderTestFile")
+            .setRecordDirName("CallRecorderTest")
+            .setRecordDirPath(Environment.getExternalStorageDirectory().getPath())
+            .setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
+            .setOutputFormat(MediaRecorder.OutputFormat.AMR_NB)
+            .setAudioSource(MediaRecorder.AudioSource.VOICE_COMMUNICATION)
+            .setShowSeed(true)
+            .build();
+
+        callRecord.enableSaveFile();
+
+        callRecord.startCallRecordService();
+
+        callRecord.startCallReceiver();
+
+
     }
 
     override fun onSignout() {
         firebaseAuth.signOut()
 
-
+        callRecord.stopCallReceiver()
 
         val intent=Intent(this,StartActivity::class.java)
          startActivity(intent)
+
         finish()
 
     }

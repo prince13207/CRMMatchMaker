@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DD29F17C"
     tools:context=".Fragments.ProfileFragment">
 
     <androidx.core.widget.NestedScrollView
@@ -86,6 +87,7 @@
                     android:hint="College" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/companyti"
                 android:layout_width="300sp"
@@ -100,7 +102,6 @@
                     android:hint="Company" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
 
 
             <LinearLayout
@@ -124,10 +125,9 @@
                     android:layout_width="0dp"
                     android:layout_height="50sp"
                     android:layout_weight="2"
-                    android:paddingBottom="8dp"
                     android:gravity="right"
-                    android:orientation="horizontal">
-
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
 
 
                     <RadioButton
@@ -141,7 +141,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Non IT" />
-
 
 
                 </RadioGroup>
@@ -177,16 +176,17 @@
         </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
+
     <LinearLayout
         android:id="@+id/progresslay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:background="#aaaaaaaa">
+        android:background="#aaaaaaaa"
+        android:gravity="center">
 
         <ProgressBar
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

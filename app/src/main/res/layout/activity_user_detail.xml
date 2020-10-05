@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DD29F17C"
     android:orientation="vertical"
     tools:context=".activities.UserDetailActivity">
 
@@ -18,19 +19,5 @@
         android:id="@+id/detailtv"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
-
-    <Button
-        android:id="@+id/startCallButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="startCall"
-        android:text="Start call" />
-
-    <Button
-        android:id="@+id/endCallButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="stopCall"
-        android:text="end call" />
 
 </LinearLayout>

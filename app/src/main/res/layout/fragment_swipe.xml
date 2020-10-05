@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DD29F17C"
     tools:context=".Fragments.SwipeFragment">
 
     <LinearLayout
@@ -29,18 +29,18 @@
         android:id="@+id/noUsersLay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="no_available_users"/>
+            android:text="no_available_users" />
 
     </LinearLayout>
 
@@ -48,30 +48,30 @@
         android:id="@+id/likeDislikeBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
         android:layout_marginBottom="8dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
             android:id="@+id/dislikeButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_weight="1"
-            android:src="@drawable/dislike"
-            android:background="@null"
             android:layout_gravity="center_vertical"
-            android:scaleType="centerInside"/>
+            android:layout_weight="1"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/dislike" />
 
         <ImageButton
             android:id="@+id/likeButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_weight="1"
-            android:src="@drawable/like"
-            android:background="@null"
             android:layout_gravity="center_vertical"
-            android:scaleType="centerInside"/>
+            android:layout_weight="1"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/like" />
 
     </LinearLayout>
 
@@ -79,8 +79,8 @@
         android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:rotation_degrees="15.5"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:rotation_degrees="15.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

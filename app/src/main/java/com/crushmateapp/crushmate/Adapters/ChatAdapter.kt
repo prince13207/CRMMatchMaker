@@ -2,9 +2,11 @@ package com.crushmateapp.crushmate.Adapters
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -44,25 +46,47 @@ class ChatAdapter( private var chatlist: ArrayList<Chat>) : RecyclerView.Adapter
          var image = holder.view.findViewById<ImageView>(R.id.chatdp)
          var name = holder.view.findViewById<TextView>(R.id.chatter)
 
-        name.text=item1.name
-        if(image!=null){
-            Picasso.get().load(item1.imageUrl).into(image)
-        }
-        layout.setOnClickListener{
+        var callButton = holder.view.findViewById<Button>(R.id.callButton)
+        var textButton = holder.view.findViewById<Button>(R.id.textButton)
 
+        textButton.setOnClickListener{
             val intent= Intent(it.context, ChatActivity::class.java)
             intent.putExtra("chatid",item1.chatId)
             intent.putExtra("userid",item1.userId)
             intent.putExtra("imageurl",item1.imageUrl)
             intent.putExtra("otheruserid",item1.otherUserId)
-
-
-
             ContextCompat.startActivity(it.context,intent,null)
+        }
+
+
+        callButton.setOnClickListener{
+            val intent = Intent(Intent.ACTION_DIAL);
+            intent.data = Uri.parse("tel:198")
+            ContextCompat.startActivity(it.context,intent,null)
+        }
+
+        name.text=item1.name
+        if(image!=null){
+            Picasso.get().load(item1.imageUrl).into(image)
+        }
+
+
+
+        layout.setOnClickListener{
+
+//            val intent= Intent(it.context, ChatActivity::class.java)
+//            intent.putExtra("chatid",item1.chatId)
+//            intent.putExtra("userid",item1.userId)
+//            intent.putExtra("imageurl",item1.imageUrl)
+//            intent.putExtra("otheruserid",item1.otherUserId)
+//
+//            ContextCompat.startActivity(it.context,intent,null)
 
         }
 
 
     }
+
+
 
 }

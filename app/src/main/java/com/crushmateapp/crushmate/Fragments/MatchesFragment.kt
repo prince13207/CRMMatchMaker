@@ -62,6 +62,10 @@ class MatchesFragment : Fragment() {
     }
 
     fun getData() {
+
+        val chat = Chat(userId, "100100", "1002", "Hinduja brothers", "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5c7269a031358e35dd2701d6%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D771%26cropX2%3D3428%26cropY1%3D11%26cropY2%3D2667")
+        chatAdapter.addElement(chat)
+
         userDatabase.child(userId).child(DATA_MATCHES).addListenerForSingleValueEvent(object:
             ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {

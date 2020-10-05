@@ -21,27 +21,12 @@ import kotlinx.android.synthetic.main.activity_user_detail.*
 
 
 class UserDetailActivity : AppCompatActivity() {
-    private lateinit var callRecord: CallRecord
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_detail)
-
-        callRecord = CallRecord.Builder(this)
-            .setLogEnable(true)
-            .setRecordFileName("CallRecorderTestFile")
-            .setRecordDirName("CallRecorderTest")
-            .setRecordDirPath(Environment.getExternalStorageDirectory().getPath())
-            .setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
-            .setOutputFormat(MediaRecorder.OutputFormat.AMR_NB)
-            .setAudioSource(MediaRecorder.AudioSource.VOICE_COMMUNICATION)
-            .setShowSeed(true)
-            .build();
-
-        callRecord.enableSaveFile();
-
-        callRecord.startCallRecordService();
 
 
         val id = intent.getStringExtra("idpassed")
@@ -74,23 +59,6 @@ class UserDetailActivity : AppCompatActivity() {
         })
 
     }
-
-
-    fun startCall(view: View){
-        callRecord.startCallReceiver();
-
-        val intent = Intent(Intent.ACTION_DIAL);
-        intent.data = Uri.parse("tel:198")
-        startActivity(intent)
-
-    }
-
-
-    fun stopCall(view: View){
-        callRecord.stopCallReceiver()
-    }
-
-
 
 }
 

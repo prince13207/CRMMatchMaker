@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFCFD"
+    android:background="#DD29F17C"
     android:orientation="vertical"
     tools:context=".activities.StartActivity">
 
@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="200sp"
+            android:layout_height="189dp"
 
             android:layout_marginTop="150sp"
             app:srcCompat="@drawable/hsbc_logo" />
