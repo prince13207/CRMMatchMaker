@@ -7,8 +7,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.ChatActivity"></activity>
+        <activity android:name=".activities.CallLogsAnalysis"></activity>
+        <activity android:name=".activities.ChatActivity" />
         <activity android:name=".activities.UserDetailActivity" />
         <activity
             android:name=".activities.SignupActivity"

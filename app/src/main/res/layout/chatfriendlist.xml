@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/chatLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chatLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -18,20 +18,20 @@
         android:id="@+id/chatter"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:gravity="center_vertical"
-        android:textSize="18sp"
-        android:text="Hello"
         android:layout_marginLeft="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/chatdp"/>
+        android:gravity="center_vertical"
+        android:text="Hello"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/chatdp"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/callButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
 
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
         android:background="@android:drawable/ic_menu_call"
         app:layout_constraintStart_toEndOf="@+id/chatdp"
         app:layout_constraintTop_toBottomOf="@+id/chatter" />
@@ -40,10 +40,23 @@
         android:id="@+id/textButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
         android:background="@android:drawable/sym_action_email"
+        app:layout_constraintEnd_toStartOf="@+id/callLogsBtn"
         app:layout_constraintStart_toEndOf="@+id/callButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/callButton" />
+
+    <Button
+        android:id="@+id/callLogsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:autoText="true"
+        android:background="?attr/actionModePasteDrawable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/callButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
